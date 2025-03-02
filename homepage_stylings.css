@@ -1,11 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body, html{
+    height: 100%;
+}
+.container{
+    display: grid;
+    /*
+    FOr each of these , the relevant element takes up the firset
+    10% of the page, and the rest takes up the rest (1 fracdtioN)
+    */
+    grid-template-columns: 20% 1fr; /* Sidebar takes 10% width, the rest  takes 1 fraction*/
+    grid-template-rows: 10% 1fr; /*Same for the header*/
+    height: 100%;
+}
 .home_header{
-    height: 10%;
-    width: 100%;
+    grid-column: 1 / -1; /*Makes the header span the full width*/
+    grid-row: 1; /*Header stays in the first row*/
     background-color: maroon;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 .sidebar_text{
-    height: 70%;
-    width: 10%;
-    background-color: lightyellow;
+    background-color: darkorange;
+    color: black;
+    padding: 20px;
+}
+.content{
+    grid-column: 2; /*Main content goes into the second column*/
+    background-color: black;
+    color: white;
+    padding: 20px;
+    display: flex;
+
+}
+.home_pic{
+    width: 300px;
+    height: auto;
+    float: left;
 }
