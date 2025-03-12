@@ -7,13 +7,40 @@
     <body>
         <div class="container">
             <div class="home_header">Header</div>
-            <div class="sidebar_text">Sidebar</div>
-            <div class="content">
-                <img src="lane_molsbee.jpg" alt="Lane" class="home_pic">
-
+            <div class="main-content">
+                <div class="sidebar_text">
+                    <div class="dropdown">
+                        <button value="See links" id="menuButton">Menu</button>
+                        <div class="dropdown-content" id="dropdownMenu">
+                            <a href="index.html">Home</a>
+                            <a href="about.html">About</a>
+                            <a href="projects.html">Projects</a>
+                        </div>
+                        
+                    </div>
+                </div>
+                <script>
+                    document.getElementById("menuButton").addEventListener("click", function (){
+                        var menu = document.getElementById("dropdownMenu")
+                        menu.style.display = (menu.style.display === "block") ? "none" : "block";
+                    });
+                    document.addEventListener("click", function (event){
+                            var dropdown = document.getElementById("dropdownMenu");
+                            var button = document.getElementById("menuButton");
+                            if(!button.contains(event.target) && !dropdown.contains(event.target)){
+                                dropdown.style.display = "none";
+                            }
+                    });
+                </script>
+                <div class="content">
+                    <img src="lane_molsbee.jpg" alt="Lane" id="home_pic">
+                    I am a current Junior studying Computer Science at the University of Arizona. 
+                    I am a dedicated, reliable, hard worker with a passion for web development, 
+                    frontend, and other associated technologies. I enjoy investigating pop culture
+                    in my freetime, as well as working out at the gym, going to church, and reading.
+    
+                </div>
             </div>
-           
-            
         </div>        
     </body>
 </html>
